@@ -89,4 +89,52 @@ public class MyLinkedList<E> {
 		prev.next = null;
 		size--;
 	}
+	
+	public void removeFirst() {
+		if(Objects.isNull(head)) {
+			System.out.println("Empty list");
+			return;
+		}
+		head = head.next;
+		size--;
+	}
+	
+	public void insertFirst(E data) {
+		Node<E> node = new Node<E>(data);
+		node.next = head;
+		head = node;
+		size++;
+	}
+	
+	public void insertLast(E data) {
+		Node<E> node = new Node<E>(data);
+		if(head == null) {
+			head = node;
+			size++;
+			return;
+		}
+		Node<E> current = head;
+		while(current.next != null) {
+			current = current.next;
+		}
+		current.next = node;
+		size++;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
