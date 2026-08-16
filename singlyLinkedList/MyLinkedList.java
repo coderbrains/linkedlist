@@ -1,5 +1,7 @@
 package linkedList.singlyLinkedList;
 
+import java.util.Objects;
+
 public class MyLinkedList<E> {
 	
 	Node<E> head = null;
@@ -67,5 +69,24 @@ public class MyLinkedList<E> {
 		size--;		
 		
 	}
-
+	
+	public void removeLast() {
+		if(Objects.isNull(head)) {
+			System.out.println("Emtpy list");
+			return;
+		}
+		if(head.next == null) {
+			head = null;
+			size--;
+			return;
+		}
+		Node<E> prev = head;
+		Node<E> current = head.next;
+		while(current.next != null) {
+			prev = current;
+			current = current.next;
+		}
+		prev.next = null;
+		size--;
+	}
 }

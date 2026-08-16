@@ -23,6 +23,10 @@ public class HandlerMethod {
 		
 		list1.print();
 		
+		list1.removeLast();
+		
+		list1.print();
+		
 	}
 
 }
